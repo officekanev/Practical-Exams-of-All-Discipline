@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cards</title>
+    <style>
+        div.card {
+            display: inline-block; padding: 10px; margin:60px 60px 0 60px;
+            width: 50px; height: 80px; background: #EEE;
+            border: 3px solid #DDD; border-radius: 5px;
+            font-size: 18pt; text-align: center; line-height: 75px;
+        }
+
+        .change  {
+            margint: 0;
+            padding: 0;
+            width: 70px;
+            height: 15px;
+            font-size: 18pt;
+            display: inline-block;
+            margin: 0 63px 0 63px;
+
+           // border: 1px dotted red;
+        }
+
+        a {
+            width: 60px;
+            height: 10px;
+            font-size: 9pt;
+            text-decoration: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div id="main">
+    <div id="changeButtons">
+        <div class="change" id="one"><a href="#">ChangeCard</a></div>
+        <div class="change" id="two"><a href="#">ChangeCard</a></div>
+        <div class="change" id="three"><a href="#">ChangeCard</a></div>
+        <div class="change" id="four"><a href="#">ChangeCard</a></div>
+    </div>
+</div>
+
+<script>
+    function cardDeckBuilder(selector) {
+
+      return {
+
+         addCard: function (face, suit) {
+
+             let divContent = [];
+
+             let newDiv = $('<div></div>').addClass('card');
+             let textt = face ;
+             switch (suit) {
+                 case "D" : textt += " \u2666";
+                     break;
+                 case "C" : textt += " \u2663";
+                     break;
+                 case "H" : textt += " \u2665";
+                     break;
+                 case "S" : textt += " \u2660";
+                     break;
+                 default: textt += " " + suit;
+                     break;
+             }
+
+             newDiv.text(textt);
+             $(selector).append(newDiv);
+
+//             $('.card:last').click(function reversecards() {          // original condition
+//                  $('.card').each(function () {
+//                      divContent.push($(this))
+//                  });
+//
+//                  divContent.reverse();
+//
+//                 $(selector).html('');
+//
+//                 let maskArr = divContent;
+//                 let length = divContent.length;
+//                 divContent = [];
+//
+//                 for (var i = 0; i < length; i++) {
+//                     let value = $(maskArr[i]).text();
+//                     value = value.split(" ");
+//
+//                     let number = value[0];
+//                     let suit = value[1];
+//
+//                     let builder = cardDeckBuilder(selector);
+//                     builder.addCard(number, suit);
+//                 }
+//             });
+
+             $('.card:last').click(function changePosition() { // paste clicked card 1-st  & remainded card after him
+                 let allDiv = [];
+                 let card = $(this).text();
+                 $('.card').each(function () {
+                     allDiv.push($(this))
+                 });
+
+                 $(selector).html('');
+
+                 let card1value = allDiv[1].text().split(' ');
+                 let [number1, suit1] = [card1value[0], card1value[1]];
+                 let card2value = allDiv[2].text().split(' ');
+                 let [number2, suit2] = [card2value[0], card2value[1]];
+                 let card3value = allDiv[3].text().split(' ');
+                 let [number3, suit3] = [card3value[0], card3value[1]];
+                 let card0value = allDiv[0].text().split(' ');
+                 let [number0, suit0] = [card0value[0], card0value[1]];
+
+                 if(allDiv[0].text() === card) {
+
+                     let builder = cardDeckBuilder(selector);
+                     builder.addCard(number0, suit0);
+                     builder.addCard(number1, suit1);
+                     builder.addCard(number2, suit2);
+                     builder.addCard(number3, suit3);
+
+                 }else if(allDiv[1].text() === card){
+
+                     let builder = cardDeckBuilder(selector);
+                      builder.addCard(number1, suit1);
+                      builder.addCard(number2, suit2);
+                      builder.addCard(number3, suit3);
+                      builder.addCard(number0, suit0);
+
+                 }else if(allDiv[2].text() === card){
+
+                     let builder = cardDeckBuilder(selector);
+                     builder.addCard(number2, suit2);
+                     builder.addCard(number3, suit3);
+                     builder.addCard(number0, suit0);
+                     builder.addCard(number1, suit1);
+
+                    // $(selector).append(allDiv[2]);
+                 }else {
+
+                     let builder = cardDeckBuilder(selector);
+                     builder.addCard(number3, suit3);
+                     builder.addCard(number0, suit0);
+                     builder.addCard(number1, suit1);
+                     builder.addCard(number2, suit2);
+                 }
+             });
+
+
+             $('.change a').click(function changeCard() {
+//                 let idd = $(this).id;
+//                 console.log(idd)
+                 let cards = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+                 let suite = ['\u2666','\u2663','\u2665','\u2660'];
+                 let cardElement = Math.floor((Math.random() * 12) + 1);
+                 let suiteElement = Math.floor((Math.random() * 3) + 1);
+
+                 $("#one").click(function(event) {
+                     let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+                     $('.card:first-child').text(newtext);
+                 });
+
+                 $("#two").click(function(event) {
+                     let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+                     $('.card:first-child').text(newtext);
+                 });
+
+//                 if($(this).id == 'one'){
+//                     let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                     $('.card:first-child').text(newtext);
+//                 }else if($(this).id == 'two'){
+//                     let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                     $('.card:first-child').text(newtext);
+//                 }
+
+//                 if(('#one').data('clicked')){
+//                     let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                     $('.card:first-child').text(newtext);
+//                 }else if(('#two').data('clicked')){
+//                     let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                     $('.card:first-child').text(newtext);
+//                 }else if(('#three').data('clicked')){
+//                     let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                     $('.card:nth-child(2)').text(newtext);
+//                 }else if(('#four').data('clicked')){
+//                     let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                     $('.card:last-child').text(newtext);
+//                 }
+
+//                if($('#one').click(function change() {
+//                            let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                        $('.card:first-child').text(newtext);
+//                        })){
+//                }else if($('#two').click(function () {
+//                            let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                            $('.card:nth-child(1)').text(newtext);
+//                        })){
+//                }else if($('#three').click(function () {
+//                            let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                            $('.card:nth-child(2)').text(newtext);
+//                        })){
+//                }else if($('#four').click(function () {
+//                            let newtext = "" + cards[cardElement] + " " + suit[suiteElement];
+//                            $('.card:last-child').text(newtext);
+//                        })){
+//                }
+             })
+         }
+      }
+    }
+</script>
+<script>
+    $(function() {
+        let builder = cardDeckBuilder("#main");
+        builder.addCard("10", "D");
+        builder.addCard("K", "S");
+        builder.addCard("Q", "H");
+        builder.addCard("4", "C");
+    });
+</script>
+</body>
+
+</html>
