@@ -1,0 +1,290 @@
+html , body, div, p, header, section, article, a,
+ul, li, nav{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Jockey One';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Jockey One'), local('JockeyOne-Regular'), url(https://fonts.gstatic.com/s/jockeyone/v6/7BN1PAvGmKkavE4yhmMIBCEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+body {
+    font-family: Jockey One;
+    font-size: 20px;
+    background-color: #F5F5F5;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Iceland';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Iceland'), local('Iceland-Regular'), url(https://fonts.gstatic.com/s/iceland/v5/0t3IIKOg5Y3bymbv3QH8mA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+header.header {
+    width: 100%;
+    height: 87px;
+    /*position: fixed;*/
+    background-color: #000000;
+    /*margin-bottom: 80px;*/
+}
+
+header.header header.head,
+header.header ul li a{
+    color: #FFFF01;
+}
+
+header.header header.head {
+    text-align: left;
+    font-family: Iceland;
+    font-size: 50px;
+    margin: 0 0 0 200px;
+}
+
+header.header ul {
+    text-align: right;
+    margin-right: 300px;
+}
+
+header.header ul li {
+    margin-right: 25px;
+}
+
+header.header ul li:first-child {
+    border-bottom: 2px solid #FFFF01;
+}
+
+header.header ul li a {
+    font-family: Iceland;
+    font-size: 26px;
+}
+
+.wrapper main {
+    width: 1200px;
+    height: 1100px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+}
+
+.wrapper main section {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    margin-top: 0px;
+}
+
+.wrapper main section {
+    background-image: url('resource/02-baner-img.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: #000000;
+}
+
+.wrapper main article {
+    /*background-color: peachpuff;*/
+    width: 565px;
+    height: 150px;
+    float: left;
+    margin: 30px 20px 30px 20px;
+}
+
+.wrapper main article.left {
+    margin-right: 0;
+}
+
+.wrapper main article .img img {
+    width:150px ;
+    height: 150px;
+}
+
+.wrapper main article .img {
+    width:150px ;
+    height: 150px;
+    float: left;
+}
+
+.wrapper main article >.text {
+    float: left;
+    margin-left: 20px;
+    width: 395px;
+    height: 150px;
+    /*background-color: gainsboro;*/
+}
+
+.wrapper main article .text > header {
+    font-family: Iceland;
+    font-size: 30px;
+    color: #0F7303;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.wrapper main article .text > p{
+    font-family: Jockey One, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer .left-nav {
+    float: left;
+    width: 350px;
+    height: 150px;
+    /*background-color: white;*/
+    margin-left: 340px;
+    margin-top: 25px;
+}
+
+footer .left-nav ul a {
+    color: #FFFF01;
+    margin-bottom: 10px;
+
+}
+
+footer .left-nav ul a {
+    font-family: "Iceland";
+    font-weight: bold;
+    font-size: 20px;
+}
+
+footer .left-nav ul  {
+    display: block;
+    margin-bottom: 30px;
+    font-family: "Jockey One";
+}
+
+footer .left-nav ul li {
+    display: block;
+    margin-bottom: 5px;
+}
+
+footer .social-nav {
+    width: 250px;
+    height: 100px;
+    float: right;
+    margin-right: 300px;
+    margin-top: 30px;
+}
+
+footer .social-nav img {
+    margin-right: 20px;
+}
+
+
+#copy {
+    color: #F5F5F5;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

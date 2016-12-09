@@ -1,0 +1,181 @@
+html , body, div, p, header, section, article, a,
+ul, li, nav{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    color: #191923;
+    font-size: 15px;
+    background-color: #CACAC9;
+}
+
+.wrapper {
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+
+    font-family: Tahoma, Arial, sans-serif;
+    color: #191923;
+}
+
+.wrapper header {
+    width: 100%;
+    height: 90px;
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+    padding:  30px 0 30px 30px;
+}
+
+ul li {
+    display: inline-block;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #191923;
+    margin-right: 20px;
+}
+
+ul li a {
+    font-family: Tahoma, Arial, sans-serif;
+    color: #191923;
+}
+
+ul li .first {
+    color: #BF1363;
+}
+
+ul li a:hover {
+    color: #BF1363;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper section article {
+    width: 242px;
+    height: 350px;
+    float: left;
+    margin-right: 10px;
+    background-color: white;
+}
+
+
+.wrapper section article:last-of-type {
+    margin-right: 0;
+}
+
+.wrapper section article a img {
+    width: 242px;
+    height: 188px;
+    margin-bottom: 20px;
+}
+
+.wrapper section article a:hover {
+    opacity: 0.8;
+}
+
+.wrapper section article p.titel {
+    margin: 0 0 10px 10px;
+    color: #8D9AB9;
+}
+
+.wrapper section article > p.text-pharagraph {
+    margin: 0 15px 0 10px;
+    font-size: 15px;
+
+}
+
+.wrapper section article:hover {
+   background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
